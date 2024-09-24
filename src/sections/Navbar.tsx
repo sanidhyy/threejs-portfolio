@@ -33,7 +33,7 @@ export const Navbar = () => {
 
           <button
             onClick={toggleMenu}
-            className="text-neutral-400 hover:text-white-500 sm:hidden flex"
+            className="text-neutral-400 hover:text-white sm:hidden flex"
             aria-label="Toggle Menu"
           >
             <img

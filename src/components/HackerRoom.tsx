@@ -4,6 +4,7 @@ Command: npx gltfjsx@6.5.0 hacker-room-new.glb -T
 */
 
 import { useGLTF, useTexture } from "@react-three/drei";
+import type { GroupProps } from "@react-three/fiber";
 import type * as THREE from "three";
 import type { GLTF } from "three-stdlib";
 
@@ -42,11 +43,11 @@ type GLTFResult = GLTF & {
   };
 };
 
-export const HackerRoom = (props: JSX.IntrinsicElements["group"]) => {
+export const HackerRoom = (props: GroupProps) => {
   const { nodes, materials } = useGLTF("/models/hacker-room.glb") as GLTFResult;
 
-  const monitortxt = useTexture("textures/desk/monitor.png");
-  const screenTxt = useTexture("textures/desk/screen.png");
+  const monitorTxt = useTexture("/textures/desk/monitor.png");
+  const screenTxt = useTexture("/textures/desk/screen.png");
 
   return (
     <group {...props} dispose={null}>
@@ -68,7 +69,7 @@ export const HackerRoom = (props: JSX.IntrinsicElements["group"]) => {
         geometry={nodes.table_table_mat_0_2.geometry}
         material={materials.computer_mat}
       >
-        <meshMatcapMaterial map={monitortxt} />
+        <meshMatcapMaterial map={monitorTxt} />
       </mesh>
       <mesh
         geometry={nodes.table_table_mat_0_3.geometry}
@@ -94,7 +95,7 @@ export const HackerRoom = (props: JSX.IntrinsicElements["group"]) => {
         geometry={nodes.table_table_mat_0_8.geometry}
         material={materials.tv_mat}
       >
-        <meshMatcapMaterial map={monitortxt} />
+        <meshMatcapMaterial map={monitorTxt} />
       </mesh>
       <mesh
         geometry={nodes.table_table_mat_0_9.geometry}
