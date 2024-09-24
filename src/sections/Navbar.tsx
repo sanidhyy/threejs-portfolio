@@ -1,4 +1,24 @@
+import { useState } from "react";
+import { navLinks } from "../constants";
+import { cn } from "../lib/utils";
+
+const NavItems = () => (
+  <ul className="nav-ul">
+    {navLinks.map(({ id, href, name }) => (
+      <li key={id} className="nav-li">
+        <a href={href} className="nav-li_a" onClick={() => {}}>
+          {name}
+        </a>
+      </li>
+    ))}
+  </ul>
+);
+
 export const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen((prevOpen) => !prevOpen);
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/90">
       <div className="max-w-7xl mx-auto">
@@ -10,10 +30,28 @@ export const Navbar = () => {
             Shubham
           </a>
 
-          <button>
-            <img src="" alt="" />
+          <button
+            onClick={toggleMenu}
+            className="text-neutral-400 hover:text-white-500 sm:hidden flex"
+            aria-label="Toggle Menu"
+          >
+            <img
+              src={isOpen ? "/assets/close.svg" : "/assets/menu.svg"}
+              alt="Toggle"
+              className="size-6"
+            />
           </button>
+
+          <nav className="sm:flex hidden">
+            <NavItems />
+          </nav>
         </div>
+      </div>
+
+      <div className={cn("nav-sidebar", isOpen ? "max-h-screen" : "max-h-0")}>
+        <nav className="p-5">
+          <NavItems />
+        </nav>
       </div>
     </header>
   );
