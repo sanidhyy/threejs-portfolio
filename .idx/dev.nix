@@ -13,26 +13,23 @@
   idx = {
     # Search for the extensions you want on https://open-vsx.org/ and use "publisher.id"
     extensions = [
-      # "vscodevim.vim"
+      "bradlc.vscode-tailwindcss"
+      "dbaeumer.vscode-eslint"
+      "dsznajder.es7-react-js-snippets"
+      "eamodio.gitlens"
+      "esbenp.prettier-vscode"
+      "formulahendry.auto-rename-tag"
+      "Prisma.prisma"
+      "WakaTime.vscode-wakatime"
     ];
     workspace = {
       # Runs when a workspace is first created with this `dev.nix` file
       onCreate = {
-        npm-install = "npm ci --no-audit --prefer-offline --no-progress --timing";
+        bun-install = "bun ci --no-audit --prefer-offline --no-progress --timing";
         # Open editors for the following files by default, if they exist:
         default.openFiles = [ "src/App.tsx" "src/App.ts" "src/App.jsx" "src/App.js" ];
       };
       # To run something each time the workspace is (re)started, use the `onStart` hook
-    };
-    # Enable previews and customize configuration
-    previews = {
-      enable = true;
-      previews = {
-        web = {
-          command = ["npm" "run" "dev" "--" "--port" "$PORT" "--host" "0.0.0.0"];
-          manager = "web";
-        };
-      };
     };
   };
 }
