@@ -64,7 +64,7 @@ export const Hero = () => {
         <Button
           isBeam
           containerClass="sm:w-fit w-full sm:min-w-96"
-          href="#contact"
+          href="#about"
         >
           Let&apos;s work together
         </Button>
