@@ -3,14 +3,15 @@ import { Canvas, type Vector3 } from "@react-three/fiber";
 import { Suspense } from "react";
 import { useMediaQuery } from "react-responsive";
 
+import { Button } from "../components/Button";
 import { CanvasLoader } from "../components/CanvasLoader";
 import { Cube } from "../components/Cube";
+import { HeroCamera } from "../components/HeroCamera";
 import { HackerRoom } from "../components/HackerRoom";
 import { ReactLogo } from "../components/ReactLogo";
 import { Rings } from "../components/Rings";
 import { Target } from "../components/Target";
 import { calculateSizes } from "../lib/utils";
-import { HeroCamera } from "../components/HeroCamera";
 
 export const Hero = () => {
   const isSmall = useMediaQuery({ maxWidth: 440 });
@@ -57,6 +58,16 @@ export const Hero = () => {
             <directionalLight position={[10, 10, 10]} intensity={0.5} />
           </Suspense>
         </Canvas>
+      </div>
+
+      <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space">
+        <Button
+          isBeam
+          containerClass="sm:w-fit w-full sm:min-w-96"
+          href="#contact"
+        >
+          Let&apos;s work together
+        </Button>
       </div>
     </section>
   );
