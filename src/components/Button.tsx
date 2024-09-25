@@ -3,7 +3,7 @@ import type { PropsWithChildren } from "react";
 import { cn } from "../lib/utils";
 
 type ButtonProps = {
-  href: string;
+  href?: string;
   isBeam?: boolean;
   containerClass: string;
 };
@@ -16,7 +16,7 @@ export const Button = ({
 }: PropsWithChildren<ButtonProps>) => {
   if (href)
     return (
-      <a href={href} className={cn("btn", containerClass)}>
+      <a href={href} className={cn("btn hover:opacity-85", containerClass)}>
         {isBeam && (
           <span className="relative flex size-3">
             <div className="btn-ping" />
@@ -29,7 +29,7 @@ export const Button = ({
     );
 
   return (
-    <button className={cn("btn", containerClass)}>
+    <button className={cn("btn hover:opacity-85", containerClass)}>
       {isBeam && (
         <span className="relative flex size-3">
           <div className="btn-ping" />
