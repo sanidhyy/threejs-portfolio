@@ -41,7 +41,7 @@ export const Projects = () => {
           <div className="absolute top-0 right-0">
             <img
               src={currentProject.spotlight}
-              alt="spotlight"
+              alt="Spotlight"
               className="h-96 w-full object-cover rounded-xl pointer-events-none select-none"
             />
           </div>
@@ -52,7 +52,7 @@ export const Projects = () => {
           >
             <img
               src={currentProject.logo}
-              alt="project logo"
+              alt="Project logo"
               className="size-10 shadow-sm"
             />
           </div>
@@ -85,7 +85,11 @@ export const Projects = () => {
               className="flex items-center gap-2 text-white-600"
             >
               <p>Check live site</p>
-              <img src="/assets/arrow-up.png" className="size-3" alt="Arrow" />
+              <img
+                src="/assets/arrow-up.png"
+                className="size-3"
+                alt="Arrow Up"
+              />
             </a>
           </div>
 

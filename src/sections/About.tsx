@@ -128,7 +128,7 @@ export const About = () => {
                 <Button onClick={handleCopy} containerClass="w-full">
                   <img
                     src={hasCopied ? "/assets/tick.svg" : "/assets/copy.svg"}
-                    alt="copy"
+                    alt={hasCopied ? "Check" : "Copy"}
                     className="size-5"
                   />
                   {hasCopied ? "Copied to clipboard" : "Copy Email"}
