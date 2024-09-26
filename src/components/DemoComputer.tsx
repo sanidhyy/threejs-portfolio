@@ -34,9 +34,9 @@ type GLTFResult = GLTF & {
   };
 };
 
-type DemoComputerProps = {
+interface DemoComputerProps {
   texture: string;
-};
+}
 
 export const DemoComputer = ({
   texture,

@@ -24,11 +24,11 @@ export const Contact = () => {
     // form fields
     const { name, email, message } = form;
 
-    type Current = {
+    interface Current {
       name: boolean;
       email: boolean;
       message: boolean;
-    };
+    }
 
     // Error message
     const nameError = document.querySelector("#name-error")!;
@@ -39,31 +39,32 @@ export const Contact = () => {
     // validate name
     if (name.trim().length < 3) {
       nameError.classList.remove("hidden");
-      current["name"] = false;
+      current.name = false;
     } else {
       nameError.classList.add("hidden");
-      current["name"] = true;
+      current.name = true;
     }
 
+    // prettier-ignore
     const email_regex =
-      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     // valiate email
-    if (!email.trim().toLowerCase().match(email_regex)) {
+    if (!email_regex.exec(email.trim().toLowerCase())) {
       emailError.classList.remove("hidden");
-      current["email"] = false;
+      current.email = false;
     } else {
       emailError.classList.add("hidden");
-      current["email"] = true;
+      current.email = true;
     }
 
     // validate message
     if (message.trim().length < 5) {
       messageError.classList.remove("hidden");
-      current["message"] = false;
+      current.message = false;
     } else {
       messageError.classList.add("hidden");
-      current["message"] = true;
+      current.message = true;
     }
 
     // True if all fields are validated
@@ -131,7 +132,7 @@ export const Contact = () => {
 
           <form
             ref={formRef}
-            onSubmit={handleSubmit}
+            onSubmit={(e) => void handleSubmit(e)}
             className="mt-12 flex flex-col space-y-7"
           >
             <label className="space-y-3">

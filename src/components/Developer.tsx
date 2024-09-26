@@ -35,9 +35,9 @@ type GLTFResult = GLTF & {
   };
 };
 
-type DeveloperProps = {
+interface DeveloperProps {
   animationName?: "idle" | "salute" | "clapping" | "victory";
-};
+}
 
 export const Developer = ({
   animationName = "idle",
@@ -81,7 +81,7 @@ export const Developer = ({
     return () => {
       actions[animationName]?.fadeOut(0.5);
     };
-  }, [animationName]);
+  }, [animationName, actions]);
 
   return (
     <group {...props} ref={groupRef} dispose={null}>

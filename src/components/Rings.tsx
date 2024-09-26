@@ -2,11 +2,11 @@ import { useGSAP } from "@gsap/react";
 import { Center, useTexture } from "@react-three/drei";
 import gsap from "gsap";
 import { useCallback, useRef } from "react";
-import * as THREE from "three";
+import type * as THREE from "three";
 
-type RingsProps = {
+interface RingsProps {
   position: [number, number, number];
-};
+}
 
 export const Rings = ({ position }: RingsProps) => {
   const refList = useRef<THREE.Mesh[]>([]);

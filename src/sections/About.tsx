@@ -8,7 +8,7 @@ export const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(links.contactEmail);
+    void navigator.clipboard.writeText(links.contactEmail);
 
     setHasCopied(true);
 

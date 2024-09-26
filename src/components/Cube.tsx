@@ -14,7 +14,7 @@ type GLTFResult = GLTF & {
   nodes: {
     Cube: THREE.Mesh;
   };
-  materials: {};
+  materials: unknown;
 };
 
 export const Cube = (props: GroupProps) => {

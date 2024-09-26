@@ -3,9 +3,9 @@ import { easing } from "maath";
 import { useRef, type PropsWithChildren } from "react";
 import * as THREE from "three";
 
-type HeroCameraProps = {
+interface HeroCameraProps {
   isMobile: boolean;
-};
+}
 
 export const HeroCamera = ({
   children,

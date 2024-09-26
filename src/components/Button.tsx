@@ -2,12 +2,12 @@ import type { PropsWithChildren } from "react";
 
 import { cn } from "../lib/utils";
 
-type ButtonProps = {
+interface ButtonProps {
   onClick?: () => void;
   href?: string;
   isBeam?: boolean;
   containerClass?: string;
-};
+}
 
 export const Button = ({
   onClick,
