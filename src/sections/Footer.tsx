@@ -3,8 +3,9 @@ import { socialLinks } from "../constants";
 export const Footer = () => {
   return (
     <footer className="c-space pt-7 pb-3 border-t border-black-300 flex justify-between items-center flex-wrap gap-5">
-      <div className="text-white-500 flex gap-2">
-        &copy; {new Date().getFullYear()} Shubham. All rights reserved.
+      <div className="text-white-500">
+        &copy; {new Date().getFullYear()} <strong>Shubham</strong>. All rights
+        reserved.
       </div>
 
       <div className="flex gap-3">
