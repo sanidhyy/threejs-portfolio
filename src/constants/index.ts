@@ -1,3 +1,8 @@
+export const links = {
+  contactEmail: "sanidhya.verma12345@gmail.com",
+  sourceCode: "https://github.com/sanidhyy/threejs-portfolio",
+};
+
 export const navLinks = [
   {
     id: 1,

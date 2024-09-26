@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { navLinks } from "../constants";
+import { links, navLinks } from "../constants";
 import { cn } from "../lib/utils";
 
 export const Navbar = () => {
@@ -20,7 +20,7 @@ export const Navbar = () => {
 
       <li className="nav-li">
         <a
-          href="https://github.com/sanidhyy/threejs-portfolio"
+          href={links.sourceCode}
           target="_blank"
           rel="noreferrer noopener"
           className="nav-li_a"

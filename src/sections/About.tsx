@@ -2,12 +2,13 @@ import { useState } from "react";
 import Globe from "react-globe.gl";
 
 import { Button } from "../components/Button";
+import { links } from "../constants";
 
 export const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText("sanidhya.verma12345@gmail.com");
+    navigator.clipboard.writeText(links.contactEmail);
 
     setHasCopied(true);
 
