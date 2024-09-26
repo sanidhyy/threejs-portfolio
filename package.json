@@ -1,7 +1,7 @@
 {
-  "name": "myapp",
+  "name": "threejs-portfolio",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,6 +9,59 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "author": {
+    "name": "Sanidhya Kumar Verma",
+    "email": "sanidhya.verma12345@gmail.com",
+    "url": "https://github.com/sanidhyy"
+  },
+  "description": "Modern UI/UX Portfolio using React and Three.js",
+  "keywords": [
+    "reactjs",
+    "netlify",
+    "react",
+    "modern-ui",
+    "modern-ux",
+    "portfolio",
+    "threejs",
+    "gsap",
+    "react-fiber",
+    "react-drei",
+    "react-three",
+    "emailjs",
+    "postcss",
+    "prettier",
+    "tailwindcss",
+    "tailwindcss-animate",
+    "ui/ux",
+    "js",
+    "javascript",
+    "typescript",
+    "eslint",
+    "html",
+    "css",
+    "js",
+    "ts"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sanidhyy/threejs-portfolio.git"
+  },
+  "homepage": "https://github.com/sanidhyy/threejs-portfolio#readme",
+  "bugs": {
+    "url": "https://github.com/sanidhyy/threejs-portfolio/issues",
+    "email": "sanidhya.verma12345@gmail.com"
+  },
+  "funding": [
+    {
+      "type": "patreon",
+      "url": "https://www.patreon.com/sanidhy"
+    },
+    {
+      "type": "Buy me a coffee",
+      "url": "https://www.buymeacoffee.com/sanidhy"
+    }
+  ],
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@gsap/react": "^2.1.1",
