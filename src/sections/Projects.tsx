@@ -1,5 +1,7 @@
+import { useGSAP } from "@gsap/react";
 import { Center, OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import gsap from "gsap";
 import { Suspense, useState } from "react";
 
 import { CanvasLoader } from "../components/CanvasLoader";
@@ -21,6 +23,14 @@ export const Projects = () => {
       }
     });
   };
+
+  useGSAP(() => {
+    gsap.fromTo(
+      `.animatedText`,
+      { opacity: 0 },
+      { opacity: 1, duration: 1, stagger: 0.2, ease: "power2.inOut" }
+    );
+  }, [selectedProjectIndex]);
 
   return (
     <section className="c-space my-20">
