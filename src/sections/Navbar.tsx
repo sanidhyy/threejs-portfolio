@@ -3,22 +3,34 @@ import { useState } from "react";
 import { navLinks } from "../constants";
 import { cn } from "../lib/utils";
 
-const NavItems = () => (
-  <ul className="nav-ul">
-    {navLinks.map(({ id, href, name }) => (
-      <li key={id} className="nav-li">
-        <a href={href} className="nav-li_a" onClick={() => {}}>
-          {name}
-        </a>
-      </li>
-    ))}
-  </ul>
-);
-
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen((prevOpen) => !prevOpen);
+
+  const NavItems = () => (
+    <ul className="nav-ul">
+      {navLinks.map(({ id, href, name }) => (
+        <li key={id} className="nav-li">
+          <a href={href} className="nav-li_a" onClick={() => setIsOpen(false)}>
+            {name}
+          </a>
+        </li>
+      ))}
+
+      <li className="nav-li">
+        <a
+          href="https://github.com/sanidhyy/threejs-portfolio"
+          target="_blank"
+          rel="noreferrer noopener"
+          className="nav-li_a"
+          onClick={() => setIsOpen(false)}
+        >
+          Source Code
+        </a>
+      </li>
+    </ul>
+  );
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/90">
