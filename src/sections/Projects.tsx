@@ -36,18 +36,18 @@ export const Projects = () => {
     <section className="c-space my-20">
       <p className="head-text">My Work</p>
 
-      <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
-        <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
-          <div className="absolute top-0 right-0">
+      <div className="mt-12 grid w-full grid-cols-1 gap-5 lg:grid-cols-2">
+        <div className="relative flex flex-col gap-5 px-5 py-10 shadow-2xl shadow-black-200 sm:p-10">
+          <div className="absolute right-0 top-0">
             <img
               src={currentProject.spotlight}
               alt="Spotlight"
-              className="h-96 w-full object-cover rounded-xl pointer-events-none select-none"
+              className="pointer-events-none h-96 w-full select-none rounded-xl object-cover"
             />
           </div>
 
           <div
-            className="p-3 backdrop-filter backdrop-blur-3xl w-fit rounded-lg"
+            className="w-fit rounded-lg p-3 backdrop-blur-3xl backdrop-filter"
             style={currentProject.logoStyle}
           >
             <img
@@ -57,8 +57,8 @@ export const Projects = () => {
             />
           </div>
 
-          <div className="flex flex-col gap-5 text-white-600 my-5">
-            <p className="text-white text-2xl font-semibold animatedText">
+          <div className="my-5 flex flex-col gap-5 text-white-600">
+            <p className="animatedText text-2xl font-semibold text-white">
               {currentProject.title}
             </p>
 
@@ -66,7 +66,7 @@ export const Projects = () => {
             <p className="animatedText">{currentProject.subdesc}</p>
           </div>
 
-          <div className="flex items-center justify-between flex-wrap gap-5">
+          <div className="flex flex-wrap items-center justify-between gap-5">
             <div className="flex items-center gap-3">
               {currentProject.tags.map((tag) => (
                 <div
@@ -93,7 +93,7 @@ export const Projects = () => {
             </a>
           </div>
 
-          <div className="flex justify-between items-center mt-7">
+          <div className="mt-7 flex items-center justify-between">
             <button
               className="arrow-btn"
               onClick={() => handleNavigation("previous")}
@@ -118,7 +118,7 @@ export const Projects = () => {
           </div>
         </div>
 
-        <div className="border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
+        <div className="h-96 rounded-lg border border-black-300 bg-black-200 md:h-full">
           <Canvas>
             <ambientLight intensity={Math.PI} />
             <directionalLight position={[10, 10, 5]} />

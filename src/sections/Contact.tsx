@@ -114,17 +114,17 @@ export const Contact = () => {
 
   return (
     <section className="c-space my-20" id="contact">
-      <div className="relative min-h-screen flex items-center justify-center flex-col">
+      <div className="relative flex min-h-screen flex-col items-center justify-center">
         <img
           src="/assets/terminal.png"
           alt="Terminal"
-          className="absolute inset-0 min-h-screen h-full"
+          className="absolute inset-0 h-full min-h-screen"
         />
 
         <div className="contact-container">
           <h3 className="head-text">Let&apos;s talk</h3>
 
-          <p className="text-lg text-white-600 mt-3">
+          <p className="mt-3 text-lg text-white-600">
             Whether you&apos;re looking to build a new website, improve your
             existing platform, or bring a unique project to life, I&apos;m here
             to help.
@@ -143,13 +143,13 @@ export const Contact = () => {
                 name="name"
                 value={form.name}
                 onChange={handleChange}
-                className="field-input disabled:opacity-75 disabled:pointer-events-none disabled:cursor-not-allowed"
+                className="field-input disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-75"
                 placeholder="John Doe"
                 autoCapitalize="on"
                 disabled={isLoading}
               />
 
-              <span className="text-red-400 hidden" id="name-error">
+              <span className="hidden text-red-400" id="name-error">
                 Invalid Name!
               </span>
             </label>
@@ -162,13 +162,13 @@ export const Contact = () => {
                 name="email"
                 value={form.email}
                 onChange={handleChange}
-                className="field-input disabled:opacity-75 disabled:pointer-events-none disabled:cursor-not-allowed"
+                className="field-input disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-75"
                 placeholder="john.doe@email.com"
                 autoCapitalize="off"
                 disabled={isLoading}
               />
 
-              <span className="text-red-400 hidden" id="email-error">
+              <span className="hidden text-red-400" id="email-error">
                 Invalid Email!
               </span>
             </label>
@@ -181,20 +181,20 @@ export const Contact = () => {
                 value={form.message}
                 onChange={handleChange}
                 rows={5}
-                className="field-input disabled:opacity-75 disabled:pointer-events-none disabled:cursor-not-allowed"
+                className="field-input disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-75"
                 placeholder="Hi, I'm interested in..."
                 autoCapitalize="on"
                 disabled={isLoading}
               />
 
-              <span className="text-red-400 hidden" id="message-error">
+              <span className="hidden text-red-400" id="message-error">
                 Invalid Message!
               </span>
             </label>
 
             <button
               type="submit"
-              className="field-btn disabled:opacity-75 disabled:pointer-events-none disabled:cursor-not-allowed"
+              className="field-btn disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-75"
               disabled={isLoading}
             >
               {isLoading ? "Sending..." : "Send Message"}

@@ -36,7 +36,7 @@ export const Experience = () => {
           </div>
 
           <div className="work-content">
-            <div className="sm:py-10 py-5 sm:px-5 px-2.5">
+            <div className="px-2.5 py-5 sm:px-5 sm:py-10">
               {workExperiences.map(
                 ({ animation, duration, icon, id, name, pos, title }) => (
                   <div
@@ -46,7 +46,7 @@ export const Experience = () => {
                     onPointerOver={() => setAnimationName(animation)}
                     onPointerOut={() => setAnimationName("idle")}
                   >
-                    <div className="flex flex-col h-full justify-start items-center py-2">
+                    <div className="flex h-full flex-col items-center justify-start py-2">
                       <div className="work-content_logo">
                         <img src={icon} alt={name} className="size-full" />
                       </div>
@@ -54,14 +54,14 @@ export const Experience = () => {
                       <div className="work-content_bar" />
                     </div>
 
-                    <div className="sm:p-5 px-2.5 py-5">
+                    <div className="px-2.5 py-5 sm:p-5">
                       <p className="font-bold text-white-800">{name}</p>
 
-                      <p className="text-sm mb-5">
+                      <p className="mb-5 text-sm">
                         {pos} &bull; {duration}
                       </p>
 
-                      <div className="group-hover:text-white transition ease-in-out duration-500">
+                      <div className="transition duration-500 ease-in-out group-hover:text-white">
                         {title}
                       </div>
                     </div>

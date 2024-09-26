@@ -9,7 +9,7 @@ export const Clients = () => {
         {clientReviews.map(({ id, name, review, img, position }) => (
           <div key={id} className="client-review">
             <div>
-              <p className="text-white font-light">{review}</p>
+              <p className="font-light text-white">{review}</p>
 
               <div className="client-content">
                 <div className="flex gap-3">
@@ -17,13 +17,13 @@ export const Clients = () => {
 
                   <div className="flex flex-col">
                     <p className="font-semibold text-white-800">{name}</p>
-                    <p className="text-white-700 md:text-base text-sm">
+                    <p className="text-sm text-white-700 md:text-base">
                       {position}
                     </p>
                   </div>
                 </div>
 
-                <div className="flex self-end items-center gap-2">
+                <div className="flex items-center gap-2 self-end">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <img
                       key={`${name}-star-${i}`}

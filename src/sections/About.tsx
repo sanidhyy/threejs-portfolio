@@ -19,13 +19,13 @@ export const About = () => {
 
   return (
     <section className="c-space my-20" id="about">
-      <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
+      <div className="grid h-full grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3 xl:grid-rows-6">
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">
             <img
               src="/assets/grid1.png"
               alt="Grid 1"
-              className="w-full sm:h-[276px] h-fit object-contain"
+              className="h-fit w-full object-contain sm:h-[276px]"
             />
 
             <div>
@@ -43,7 +43,7 @@ export const About = () => {
             <img
               src="/assets/grid2.png"
               alt="Grid 2"
-              className="w-full sm:w-[276px] h-fit object-contain"
+              className="h-fit w-full object-contain sm:w-[276px]"
             />
 
             <div>
@@ -58,7 +58,7 @@ export const About = () => {
 
         <div className="col-span-1 xl:row-span-4">
           <div className="grid-container">
-            <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
+            <div className="flex h-fit w-full items-center justify-center rounded-3xl sm:h-[326px]">
               <Globe
                 height={326}
                 width={326}
@@ -99,7 +99,7 @@ export const About = () => {
             <img
               src="/assets/grid3.png"
               alt="Grid 3"
-              className="w-full sm:h-[266px] h-fit object-contain"
+              className="h-fit w-full object-contain sm:h-[266px]"
             />
 
             <div>
@@ -117,7 +117,7 @@ export const About = () => {
             <img
               src="/assets/grid4.png"
               alt="Grid 4"
-              className="w-full md:h-[126px] sm:h-[276px] h-fit object-cover sm:object-top"
+              className="h-fit w-full object-cover sm:h-[276px] sm:object-top md:h-[126px]"
             />
 
             <div className="space-y-2">
