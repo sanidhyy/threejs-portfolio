@@ -117,19 +117,19 @@ VITE_APP_EMAIL=<your-email-here>
 VITE_APP_PUBLIC_KEY=xxxxxxxxxxxxxx
 ```
 
-5. ### Service ID (Replace VITE_APP_SERVICE_ID):
+### 5. Service ID (Replace VITE_APP_SERVICE_ID):
 
 - Visit [EmailJS](https://emailjs.com "EmailJS") Website.
 - Log in to your account or sign up with new account.
 - Navigate to the API keys or services section.
 - Find and copy the Service ID associated with your account.
 
-6. ### Template ID (Replace VITE_APP_TEMPLATE_ID):
+### 6. Template ID (Replace VITE_APP_TEMPLATE_ID):
 
 - Access the section for email templates or integration.
 - Locate the template you want to use or create a new one and copy its Template ID.
 
-7. ### EmailJS Public Key (Replace VITE_APP_PUBLIC_KEY):
+### 7. EmailJS Public Key (Replace VITE_APP_PUBLIC_KEY):
 
 - Navigate to the dashboard or settings page.
 - Look for API keys or integration settings.
@@ -137,7 +137,7 @@ VITE_APP_PUBLIC_KEY=xxxxxxxxxxxxxx
 
 ![Copy public key](/.github/images/step_emailjs.png "Copy public key")
 
-8. ### EmailJS Receiver (Replace VITE_APP_EMAIL):
+### 8. EmailJS Receiver (Replace VITE_APP_EMAIL):
 
 - Enter the email address where you want to receive emails.
 - Ensure that the chosen email address is accessible and ready to receive emails.
