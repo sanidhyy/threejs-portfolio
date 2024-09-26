@@ -278,3 +278,21 @@ export const workExperiences = [
     animation: "salute",
   },
 ] as const;
+
+export const socialLinks = [
+  {
+    name: "GitHub",
+    icon: "/assets/github.svg",
+    url: "https://github.com",
+  },
+  {
+    name: "Twitter",
+    icon: "/assets/twitter.svg",
+    url: "https://twitter.com",
+  },
+  {
+    name: "Instagram",
+    icon: "/assets/instagram.svg",
+    url: "https://instagram.com",
+  },
+] as const;
