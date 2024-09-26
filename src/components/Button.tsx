@@ -3,12 +3,14 @@ import type { PropsWithChildren } from "react";
 import { cn } from "../lib/utils";
 
 type ButtonProps = {
+  onClick?: () => void;
   href?: string;
   isBeam?: boolean;
-  containerClass: string;
+  containerClass?: string;
 };
 
 export const Button = ({
+  onClick,
   href,
   children,
   isBeam = false,
@@ -29,7 +31,10 @@ export const Button = ({
     );
 
   return (
-    <button className={cn("btn hover:opacity-85", containerClass)}>
+    <button
+      onClick={onClick}
+      className={cn("btn hover:opacity-85", containerClass)}
+    >
       {isBeam && (
         <span className="relative flex size-3">
           <div className="btn-ping" />

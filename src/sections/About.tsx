@@ -11,11 +11,9 @@ export const About = () => {
 
     setHasCopied(true);
 
-    const timeout = setTimeout(() => {
+    setTimeout(() => {
       setHasCopied(false);
     }, 2000);
-
-    return () => clearTimeout(timeout);
   };
 
   return (
@@ -122,17 +120,19 @@ export const About = () => {
             />
 
             <div className="space-y-2">
-              <p className="grid-subtext text-center">Contact me</p>
+              <p className="grid-subtext text-center">
+                Contact me through email
+              </p>
 
-              <div className="copy-container" onClick={handleCopy}>
-                <img
-                  src={hasCopied ? "/assets/tick.svg" : "/assets/copy.svg"}
-                  alt="copy"
-                />
-
-                <p className="md:text-xl font-medium text-gray_gradient text-white">
-                  sanidhya.verma12345@gmail.com
-                </p>
+              <div className="copy-container">
+                <Button onClick={handleCopy} containerClass="w-full">
+                  <img
+                    src={hasCopied ? "/assets/tick.svg" : "/assets/copy.svg"}
+                    alt="copy"
+                    className="size-5"
+                  />
+                  {hasCopied ? "Copied to clipboard" : "Copy Email"}
+                </Button>
               </div>
             </div>
           </div>
