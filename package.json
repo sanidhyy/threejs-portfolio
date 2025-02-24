@@ -69,7 +69,7 @@
     "@emailjs/browser": "^4.4.1",
     "@gsap/react": "^2.1.1",
     "@react-three/drei": "^9.113.0",
-    "@react-three/fiber": "^8.17.8",
+    "@react-three/fiber": "^9.0.4",
     "clsx": "^2.1.1",
     "gsap": "^3.12.5",
     "leva": "^0.10.0",
