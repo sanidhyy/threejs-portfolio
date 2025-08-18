@@ -75,7 +75,7 @@
     "leva": "^0.10.0",
     "maath": "^0.10.8",
     "react": "18",
-    "react-dom": "18",
+    "react-dom": "19",
     "react-globe.gl": "^2.34.0",
     "react-responsive": "^10.0.1",
     "sonner": "^2.0.6",
