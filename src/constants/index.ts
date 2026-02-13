@@ -293,7 +293,7 @@ export const socialLinks = [
   {
     name: "Twitter",
     icon: "/assets/twitter.svg",
-    url: "https://twitter.com",
+    url: "https://x.com/_sanidhyy",
   },
   {
     name: "Instagram",
