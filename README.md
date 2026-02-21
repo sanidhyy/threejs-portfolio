@@ -46,56 +46,35 @@ Here is the folder structure of this app.
 <!--- FOLDER_STRUCTURE_START --->
 ```bash
 threejs-portfolio/
+  |- .idx/
+    |-- dev.nix
+    |-- icon.png
   |- public/
-    |-- assets/
-    |-- models/
-    |-- textures/
-    |-- apple-icon.png
-    |-- favicon.ico
-    |-- favicon1.png
-    |-- favicon2.png
   |- src/
     |-- components/
-        |--- Button.tsx
-        |--- CanvasLoader.tsx
-        |--- Cube.tsx
-        |--- DemoComputer.tsx
-        |--- Developer.tsx
-        |--- HackerRoom.tsx
-        |--- HeroCamera.tsx
-        |--- ReactLogo.tsx
-        |--- Rings.tsx
-        |--- Target.tsx
     |-- constants/
-        |--- index.ts
     |-- lib/
-        |--- utils.ts
     |-- sections/
-        |--- About.tsx
-        |--- Clients.tsx
-        |--- Contact.tsx
-        |--- Experience.tsx
-        |--- Footer.tsx
-        |--- Hero.tsx
-        |--- Navbar.tsx
-        |--- Projects.tsx
     |-- App.tsx
     |-- index.css
     |-- main.tsx
     |-- vite-env.d.ts
-  |- .env.local.example
-  |- .env.local.local
+  |- .env.example
+  |- .env/.env.local
   |- .gitignore
   |- .prettierrc
   |- bun.lockb
-  |- eslint-config.js
+  |- eslint.config.js
   |- index.html
+  |- netlify.toml
   |- package.json
   |- postcss.config.js
   |- tailwind.config.js
   |- tsconfig.app.json
+  |- tsconfig.app.tsbuildinfo
   |- tsconfig.json
   |- tsconfig.node.json
+  |- tsconfig.node.tsbuildinfo
   |- vite.config.ts
 ```
 <!--- FOLDER_STRUCTURE_END --->
@@ -180,37 +159,38 @@ Useful resources and dependencies that are used in Threejs portfolio.
 
 <!--- DEPENDENCIES_START --->
 - [@emailjs/browser](https://www.npmjs.com/package/@emailjs/browser): ^4.4.1
-- [@gsap/react](https://www.npmjs.com/package/@gsap/react): ^2.1.1
-- [@react-three/drei](https://www.npmjs.com/package/@react-three/drei): ^9.113.0
-- [@react-three/fiber](https://www.npmjs.com/package/@react-three/fiber): ^8.17.8
+- [@eslint/js](https://www.npmjs.com/package/@eslint/js): ^10.0.1
+- [@gsap/react](https://www.npmjs.com/package/@gsap/react): ^2.1.2
+- [@react-three/drei](https://www.npmjs.com/package/@react-three/drei): ^10.4.4
+- [@react-three/fiber](https://www.npmjs.com/package/@react-three/fiber): 8
+- [@types/react](https://www.npmjs.com/package/@types/react): 18
+- [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): 18
+- [@vitejs/plugin-react](https://www.npmjs.com/package/@vitejs/plugin-react): ^5.0.0
+- [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.4.21
 - [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
-- [gsap](https://www.npmjs.com/package/gsap): ^3.12.5
-- [leva](https://www.npmjs.com/package/leva): ^0.9.35
+- [eslint](https://www.npmjs.com/package/eslint): ^10.0.0
+- [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react): ^7.37.5
+- [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks): ^7.0.0
+- [eslint-plugin-react-refresh](https://www.npmjs.com/package/eslint-plugin-react-refresh): ^0.5.0
+- [globals](https://www.npmjs.com/package/globals): ^17.0.0
+- [gsap](https://www.npmjs.com/package/gsap): ^3.13.0
+- [leva](https://www.npmjs.com/package/leva): ^0.10.0
 - [maath](https://www.npmjs.com/package/maath): ^0.10.8
-- [react](https://www.npmjs.com/package/react): ^18.3.1
-- [react-dom](https://www.npmjs.com/package/react-dom): ^18.3.1
-- [react-globe.gl](https://www.npmjs.com/package/react-globe.gl): ^2.27.2
-- [react-responsive](https://www.npmjs.com/package/react-responsive): ^10.0.0
-- [sonner](https://www.npmjs.com/package/sonner): ^1.5.0
-- [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^2.5.2
-- [three](https://www.npmjs.com/package/three): ^0.168.0
-- [@eslint/js](https://www.npmjs.com/package/@eslint/js): ^9.9.0
-- [@types/react](https://www.npmjs.com/package/@types/react): ^18.3.3
-- [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^18.3.0
-- [@vitejs/plugin-react](https://www.npmjs.com/package/@vitejs/plugin-react): ^4.3.1
-- [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.4.20
-- [eslint](https://www.npmjs.com/package/eslint): ^9.9.0
-- [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react): ^7.36.1
-- [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks): ^5.1.0-rc.0
-- [eslint-plugin-react-refresh](https://www.npmjs.com/package/eslint-plugin-react-refresh): ^0.4.9
-- [globals](https://www.npmjs.com/package/globals): ^15.9.0
-- [postcss](https://www.npmjs.com/package/postcss): ^8.4.47
-- [prettier](https://www.npmjs.com/package/prettier): ^3.3.3
-- [prettier-plugin-tailwindcss](https://www.npmjs.com/package/prettier-plugin-tailwindcss): ^0.6.8
-- [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^3.4.13
-- [typescript](https://www.npmjs.com/package/typescript): ^5.5.3
-- [typescript-eslint](https://www.npmjs.com/package/typescript-eslint): ^8.0.1
-- [vite](https://www.npmjs.com/package/vite): ^5.4.1
+- [postcss](https://www.npmjs.com/package/postcss): ^8.5.6
+- [prettier](https://www.npmjs.com/package/prettier): ^3.6.2
+- [prettier-plugin-tailwindcss](https://www.npmjs.com/package/prettier-plugin-tailwindcss): ^0.7.1
+- [react](https://www.npmjs.com/package/react): 18
+- [react-dom](https://www.npmjs.com/package/react-dom): 18
+- [react-globe.gl](https://www.npmjs.com/package/react-globe.gl): ^2.34.0
+- [react-responsive](https://www.npmjs.com/package/react-responsive): ^10.0.1
+- [sonner](https://www.npmjs.com/package/sonner): ^2.0.6
+- [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^3.3.1
+- [tailwindcss](https://www.npmjs.com/package/tailwindcss): 3
+- [three](https://www.npmjs.com/package/three): 0.182.0
+- [typescript](https://www.npmjs.com/package/typescript): ^5.8.3
+- [typescript-eslint](https://www.npmjs.com/package/typescript-eslint): ^8.35.1
+- [vite](https://www.npmjs.com/package/vite): ^7.0.2
+
 <!--- DEPENDENCIES_END --->
 
 ## :coffee: Buy Me a Coffee
