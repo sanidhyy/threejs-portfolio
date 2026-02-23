@@ -186,7 +186,7 @@ Useful resources and dependencies that are used in Threejs portfolio.
 - [sonner](https://www.npmjs.com/package/sonner): ^2.0.6
 - [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^3.3.1
 - [tailwindcss](https://www.npmjs.com/package/tailwindcss): 3
-- [three](https://www.npmjs.com/package/three): 0.182.0
+- [three](https://www.npmjs.com/package/three): 0.183.1
 - [typescript](https://www.npmjs.com/package/typescript): ^5.8.3
 - [typescript-eslint](https://www.npmjs.com/package/typescript-eslint): ^8.35.1
 - [vite](https://www.npmjs.com/package/vite): ^7.0.2
