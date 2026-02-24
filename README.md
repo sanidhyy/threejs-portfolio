@@ -46,9 +46,6 @@ Here is the folder structure of this app.
 <!--- FOLDER_STRUCTURE_START --->
 ```bash
 threejs-portfolio/
-  |- .idx/
-    |-- dev.nix
-    |-- icon.png
   |- public/
   |- src/
     |-- components/
