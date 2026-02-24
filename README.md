@@ -52,9 +52,29 @@ threejs-portfolio/
   |- public/
   |- src/
     |-- components/
+      |--- Button.tsx
+      |--- CanvasLoader.tsx
+      |--- Cube.tsx
+      |--- DemoComputer.tsx
+      |--- Developer.tsx
+      |--- HackerRoom.tsx
+      |--- HeroCamera.tsx
+      |--- ReactLogo.tsx
+      |--- Rings.tsx
+      |--- Target.tsx
     |-- constants/
+      |--- index.ts
     |-- lib/
+      |--- utils.ts
     |-- sections/
+      |--- About.tsx
+      |--- Clients.tsx
+      |--- Contact.tsx
+      |--- Experience.tsx
+      |--- Footer.tsx
+      |--- Hero.tsx
+      |--- Navbar.tsx
+      |--- Projects.tsx
     |-- App.tsx
     |-- index.css
     |-- main.tsx
