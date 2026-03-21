@@ -86,7 +86,7 @@
     "@eslint/js": "^10.0.1",
     "@types/react": "18",
     "@types/react-dom": "18",
-    "@vitejs/plugin-react": "^5.0.0",
+    "@vitejs/plugin-react": "^6.0.1",
     "autoprefixer": "^10.4.21",
     "eslint": "^10.0.0",
     "eslint-plugin-react": "^7.37.5",
