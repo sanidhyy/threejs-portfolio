@@ -195,7 +195,7 @@ Useful resources and dependencies that are used in Threejs portfolio.
 - [maath](https://www.npmjs.com/package/maath): ^0.10.8
 - [postcss](https://www.npmjs.com/package/postcss): ^8.5.6
 - [prettier](https://www.npmjs.com/package/prettier): ^3.6.2
-- [prettier-plugin-tailwindcss](https://www.npmjs.com/package/prettier-plugin-tailwindcss): ^0.7.1
+- [prettier-plugin-tailwindcss](https://www.npmjs.com/package/prettier-plugin-tailwindcss): ^0.8.0
 - [react](https://www.npmjs.com/package/react): 18
 - [react-dom](https://www.npmjs.com/package/react-dom): 18
 - [react-globe.gl](https://www.npmjs.com/package/react-globe.gl): ^2.34.0
