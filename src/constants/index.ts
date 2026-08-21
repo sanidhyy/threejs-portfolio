@@ -1,5 +1,5 @@
 export const links = {
-  contactEmail: "sanidhya.verma12345@gmail.com",
+  contactEmail: "sanidhyyy@gmail.com",
   sourceCode: "https://github.com/sanidhyy/threejs-portfolio",
 };
 
