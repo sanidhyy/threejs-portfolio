@@ -4,5 +4,6 @@
   "tabWidth": 2,
   "singleQuote": false,
   "jsxSingleQuote": false,
-  "plugins": ["prettier-plugin-tailwindcss"]
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "tailwindStylesheet": "./src/index.css"
 }

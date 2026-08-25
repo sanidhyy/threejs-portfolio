@@ -21,19 +21,19 @@ export function calculateSizes(
           ? [5, -5, 0]
           : [9, -5.5, 0],
     reactLogoPosition: isSmall
-      ? [3, 4, 0]
+      ? [3, 3, 0]
       : isMobile
         ? [5, 3, 0]
         : isTablet
-          ? [5, 2, 0]
-          : [10, 3, 0],
+          ? [5, 3, 0]
+          : [12, 3, 0],
     ringPosition: isSmall
-      ? [-5, 7, 0]
+      ? [-5, 0, 0]
       : isMobile
-        ? [-36, 10, 0]
+        ? [-6, 0, 0]
         : isTablet
-          ? [-38, 10, 0]
-          : [-42, 10, 0],
+          ? [-7, 0, 0]
+          : [-8, 0, 0],
     targetPosition: isSmall
       ? [-5, -10, -10]
       : isMobile

@@ -33,27 +33,27 @@ export const Projects = () => {
   }, [selectedProjectIndex]);
 
   return (
-    <section className="c-space my-20">
+    <section className="my-20 c-space">
       <p className="head-text">My Work</p>
 
       <div className="mt-12 grid w-full grid-cols-1 gap-5 lg:grid-cols-2">
         <div className="relative flex flex-col gap-5 px-5 py-10 shadow-2xl shadow-black-200 sm:p-10">
-          <div className="absolute right-0 top-0">
+          <div className="absolute top-0 right-0">
             <img
               src={currentProject.spotlight}
               alt="Spotlight"
-              className="pointer-events-none h-96 w-full select-none rounded-xl object-cover"
+              className="pointer-events-none h-96 w-full rounded-xl object-cover select-none"
             />
           </div>
 
           <div
-            className="w-fit rounded-lg p-3 backdrop-blur-3xl backdrop-filter"
+            className="w-fit rounded-lg p-3 backdrop-blur-3xl"
             style={currentProject.logoStyle}
           >
             <img
               src={currentProject.logo}
               alt="Project logo"
-              className="size-10 shadow-sm"
+              className="size-10 shadow-xs"
             />
           </div>
 

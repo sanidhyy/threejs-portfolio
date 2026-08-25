@@ -18,47 +18,40 @@ export const Rings = ({ position }: RingsProps) => {
 
   const texture = useTexture("/textures/rings.png");
 
-  useGSAP(
-    () => {
-      if (refList.current.length === 0) return;
+  useGSAP(() => {
+    if (refList.current.length === 0) return;
 
-      refList.current.forEach((r) => {
-        r.position.set(position[0], position[1], position[2]);
-      });
-
-      gsap
-        .timeline({
-          repeat: -1,
-          repeatDelay: 0.5,
-        })
-        .to(
-          refList.current.map((r) => r.rotation),
-          {
-            y: `+=${Math.PI * 2}`,
-            x: `-=${Math.PI * 2}`,
-            duration: 2.5,
-            stagger: {
-              each: 0.15,
-            },
-          }
-        );
-    },
-    {
-      dependencies: position,
-    }
-  );
+    gsap
+      .timeline({
+        repeat: -1,
+        repeatDelay: 0.5,
+      })
+      .to(
+        refList.current.map((r) => r.rotation),
+        {
+          y: `+=${Math.PI * 2}`,
+          x: `-=${Math.PI * 2}`,
+          duration: 2.5,
+          stagger: {
+            each: 0.15,
+          },
+        }
+      );
+  });
 
   return (
-    <Center>
-      <group scale={0.5}>
-        {Array.from({ length: 4 }, (_, index) => (
-          <mesh key={index} ref={getRef}>
-            <torusGeometry args={[(index + 1) * 0.5, 0.1]} />
+    <group position={position}>
+      <Center>
+        <group scale={0.5}>
+          {Array.from({ length: 4 }, (_, index) => (
+            <mesh key={index} ref={getRef}>
+              <torusGeometry args={[(index + 1) * 0.5, 0.1]} />
 
-            <meshMatcapMaterial matcap={texture} toneMapped={false} />
-          </mesh>
-        ))}
-      </group>
-    </Center>
+              <meshMatcapMaterial matcap={texture} toneMapped={false} />
+            </mesh>
+          ))}
+        </group>
+      </Center>
+    </group>
   );
 };
