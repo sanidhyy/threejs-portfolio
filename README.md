@@ -88,10 +88,8 @@ threejs-portfolio/
   |- postcss.config.js
   |- tailwind.config.js
   |- tsconfig.app.json
-  |- tsconfig.app.tsbuildinfo
   |- tsconfig.json
   |- tsconfig.node.json
-  |- tsconfig.node.tsbuildinfo
   |- vite.config.ts
 ```
 <!--- FOLDER_STRUCTURE_END --->
@@ -187,9 +185,9 @@ Useful resources and dependencies that are used in Threejs portfolio.
 - [@eslint/js](https://www.npmjs.com/package/@eslint/js): ^10.0.1
 - [@gsap/react](https://www.npmjs.com/package/@gsap/react): ^2.1.2
 - [@react-three/drei](https://www.npmjs.com/package/@react-three/drei): ^10.4.4
-- [@react-three/fiber](https://www.npmjs.com/package/@react-three/fiber): 8
-- [@types/react](https://www.npmjs.com/package/@types/react): 18
-- [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): 18
+- [@react-three/fiber](https://www.npmjs.com/package/@react-three/fiber): ^9.7.0
+- [@types/react](https://www.npmjs.com/package/@types/react): ^19.2.18
+- [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^19.2.5
 - [@types/three](https://www.npmjs.com/package/@types/three): ^0.185.4
 - [@vitejs/plugin-react](https://www.npmjs.com/package/@vitejs/plugin-react): ^6.0.1
 - [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.4.21
@@ -205,8 +203,8 @@ Useful resources and dependencies that are used in Threejs portfolio.
 - [postcss](https://www.npmjs.com/package/postcss): ^8.5.6
 - [prettier](https://www.npmjs.com/package/prettier): ^3.6.2
 - [prettier-plugin-tailwindcss](https://www.npmjs.com/package/prettier-plugin-tailwindcss): ^0.8.0
-- [react](https://www.npmjs.com/package/react): 18
-- [react-dom](https://www.npmjs.com/package/react-dom): 18
+- [react](https://www.npmjs.com/package/react): ^19.2.8
+- [react-dom](https://www.npmjs.com/package/react-dom): ^19.2.8
 - [react-globe.gl](https://www.npmjs.com/package/react-globe.gl): ^2.34.0
 - [react-responsive](https://www.npmjs.com/package/react-responsive): ^10.0.1
 - [sonner](https://www.npmjs.com/package/sonner): ^2.0.6
@@ -214,8 +212,8 @@ Useful resources and dependencies that are used in Threejs portfolio.
 - [tailwindcss](https://www.npmjs.com/package/tailwindcss): 3
 - [three](https://www.npmjs.com/package/three): 0.185.1
 - [three-stdlib](https://www.npmjs.com/package/three-stdlib): ^2.36.1
-- [typescript](https://www.npmjs.com/package/typescript): ^7.0.2
-- [typescript-eslint](https://www.npmjs.com/package/typescript-eslint): ^8.35.1
+- [typescript](https://www.npmjs.com/package/typescript): ^6.0.3
+- [typescript-eslint](https://www.npmjs.com/package/typescript-eslint): ^8.67.0
 - [vite](https://www.npmjs.com/package/vite): ^8.0.0
 
 <!--- DEPENDENCIES_END --->
