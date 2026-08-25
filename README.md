@@ -85,8 +85,6 @@ threejs-portfolio/
   |- netlify.toml
   |- package.json
   |- pnpm-lock.yaml
-  |- postcss.config.js
-  |- tailwind.config.js
   |- tsconfig.app.json
   |- tsconfig.json
   |- tsconfig.node.json
@@ -186,11 +184,11 @@ Useful resources and dependencies that are used in Threejs portfolio.
 - [@gsap/react](https://www.npmjs.com/package/@gsap/react): ^2.1.2
 - [@react-three/drei](https://www.npmjs.com/package/@react-three/drei): ^10.4.4
 - [@react-three/fiber](https://www.npmjs.com/package/@react-three/fiber): ^9.7.0
+- [@tailwindcss/vite](https://www.npmjs.com/package/@tailwindcss/vite): ^4.3.3
 - [@types/react](https://www.npmjs.com/package/@types/react): ^19.2.18
 - [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^19.2.5
 - [@types/three](https://www.npmjs.com/package/@types/three): ^0.185.4
 - [@vitejs/plugin-react](https://www.npmjs.com/package/@vitejs/plugin-react): ^6.0.1
-- [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.4.21
 - [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
 - [eslint](https://www.npmjs.com/package/eslint): ^10.0.0
 - [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react): ^7.37.5
@@ -200,16 +198,15 @@ Useful resources and dependencies that are used in Threejs portfolio.
 - [gsap](https://www.npmjs.com/package/gsap): ^3.13.0
 - [leva](https://www.npmjs.com/package/leva): ^0.10.0
 - [maath](https://www.npmjs.com/package/maath): ^0.10.8
-- [postcss](https://www.npmjs.com/package/postcss): ^8.5.6
 - [prettier](https://www.npmjs.com/package/prettier): ^3.6.2
-- [prettier-plugin-tailwindcss](https://www.npmjs.com/package/prettier-plugin-tailwindcss): ^0.8.0
+- [prettier-plugin-tailwindcss](https://www.npmjs.com/package/prettier-plugin-tailwindcss): ^0.8.1
 - [react](https://www.npmjs.com/package/react): ^19.2.8
 - [react-dom](https://www.npmjs.com/package/react-dom): ^19.2.8
 - [react-globe.gl](https://www.npmjs.com/package/react-globe.gl): ^2.34.0
 - [react-responsive](https://www.npmjs.com/package/react-responsive): ^10.0.1
 - [sonner](https://www.npmjs.com/package/sonner): ^2.0.6
 - [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^3.3.1
-- [tailwindcss](https://www.npmjs.com/package/tailwindcss): 3
+- [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^4.3.3
 - [three](https://www.npmjs.com/package/three): 0.185.1
 - [three-stdlib](https://www.npmjs.com/package/three-stdlib): ^2.36.1
 - [typescript](https://www.npmjs.com/package/typescript): ^6.0.3
