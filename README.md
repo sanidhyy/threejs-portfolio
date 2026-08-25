@@ -48,7 +48,6 @@ Here is the folder structure of this app.
 threejs-portfolio/
   |- netlify/
     |-- functions/
-      |--- contact.ts
   |- public/
   |- src/
     |-- components/
