@@ -3,34 +3,39 @@ import { useState } from "react";
 import { links, navLinks } from "../constants";
 import { cn } from "../lib/utils";
 
+interface NavItemsProps {
+  onNavigate: () => void;
+}
+
+const NavItems = ({ onNavigate }: NavItemsProps) => (
+  <ul className="nav-ul">
+    {navLinks.map(({ id, href, name }) => (
+      <li key={id} className="nav-li">
+        <a href={href} className="nav-li_a" onClick={onNavigate}>
+          {name}
+        </a>
+      </li>
+    ))}
+
+    <li className="nav-li">
+      <a
+        href={links.sourceCode}
+        target="_blank"
+        rel="noreferrer noopener"
+        className="nav-li_a"
+        onClick={onNavigate}
+      >
+        Source Code
+      </a>
+    </li>
+  </ul>
+);
+
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen((prevOpen) => !prevOpen);
-
-  const NavItems = () => (
-    <ul className="nav-ul">
-      {navLinks.map(({ id, href, name }) => (
-        <li key={id} className="nav-li">
-          <a href={href} className="nav-li_a" onClick={() => setIsOpen(false)}>
-            {name}
-          </a>
-        </li>
-      ))}
-
-      <li className="nav-li">
-        <a
-          href={links.sourceCode}
-          target="_blank"
-          rel="noreferrer noopener"
-          className="nav-li_a"
-          onClick={() => setIsOpen(false)}
-        >
-          Source Code
-        </a>
-      </li>
-    </ul>
-  );
+  const closeMenu = () => setIsOpen(false);
 
   return (
     <header className="fixed left-0 right-0 top-0 z-50 bg-black/90">
@@ -56,14 +61,14 @@ export const Navbar = () => {
           </button>
 
           <nav className="hidden sm:flex">
-            <NavItems />
+            <NavItems onNavigate={closeMenu} />
           </nav>
         </div>
       </div>
 
       <div className={cn("nav-sidebar", isOpen ? "max-h-screen" : "max-h-0")}>
         <nav className="p-5">
-          <NavItems />
+          <NavItems onNavigate={closeMenu} />
         </nav>
       </div>
     </header>

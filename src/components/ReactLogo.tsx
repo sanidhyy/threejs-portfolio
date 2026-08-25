@@ -7,7 +7,7 @@
 */
 
 import { Float, useGLTF } from "@react-three/drei";
-import type { GroupProps } from "@react-three/fiber";
+import type { ThreeElements } from "@react-three/fiber";
 import type * as THREE from "three";
 import type { GLTF } from "three-stdlib";
 
@@ -20,8 +20,10 @@ type GLTFResult = GLTF & {
   };
 };
 
-export const ReactLogo = (props: GroupProps) => {
-  const { nodes, materials } = useGLTF("/models/react.glb") as GLTFResult;
+export const ReactLogo = (props: ThreeElements["group"]) => {
+  const { nodes, materials } = useGLTF(
+    "/models/react.glb"
+  ) as unknown as GLTFResult;
 
   return (
     <Float floatIntensity={1}>

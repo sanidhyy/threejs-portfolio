@@ -4,7 +4,7 @@ Command: npx gltfjsx@6.5.0 hacker-room-new.glb -T
 */
 
 import { useGLTF, useTexture } from "@react-three/drei";
-import type { GroupProps } from "@react-three/fiber";
+import type { ThreeElements } from "@react-three/fiber";
 import type * as THREE from "three";
 import type { GLTF } from "three-stdlib";
 
@@ -43,8 +43,10 @@ type GLTFResult = GLTF & {
   };
 };
 
-export const HackerRoom = (props: GroupProps) => {
-  const { nodes, materials } = useGLTF("/models/hacker-room.glb") as GLTFResult;
+export const HackerRoom = (props: ThreeElements["group"]) => {
+  const { nodes, materials } = useGLTF(
+    "/models/hacker-room.glb"
+  ) as unknown as GLTFResult;
 
   const monitorTxt = useTexture("/textures/desk/monitor.png");
   const screenTxt = useTexture("/textures/desk/screen.png");

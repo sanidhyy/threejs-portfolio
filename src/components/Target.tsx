@@ -1,11 +1,11 @@
 import { useGSAP } from "@gsap/react";
 import { useGLTF } from "@react-three/drei";
-import type { MeshProps } from "@react-three/fiber";
+import type { ThreeElements } from "@react-three/fiber";
 import gsap from "gsap";
 import { useRef } from "react";
 import type * as THREE from "three";
 
-export const Target = (props: MeshProps) => {
+export const Target = (props: ThreeElements["mesh"]) => {
   const targetRef = useRef<THREE.Mesh>(null);
   const { scene } = useGLTF("/models/target.gltf");
 

@@ -4,7 +4,7 @@
 
 import { useGSAP } from "@gsap/react";
 import { Float, useGLTF, useTexture } from "@react-three/drei";
-import type { GroupProps } from "@react-three/fiber";
+import type { ThreeElements } from "@react-three/fiber";
 import gsap from "gsap";
 import { useRef, useState } from "react";
 import type * as THREE from "three";
@@ -17,8 +17,8 @@ type GLTFResult = GLTF & {
   materials: unknown;
 };
 
-export const Cube = (props: GroupProps) => {
-  const { nodes } = useGLTF("/models/cube.glb") as GLTFResult;
+export const Cube = (props: ThreeElements["group"]) => {
+  const { nodes } = useGLTF("/models/cube.glb") as unknown as GLTFResult;
   const texture = useTexture("/textures/cube.png");
 
   const cubeRef = useRef<THREE.Mesh>(null);
