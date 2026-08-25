@@ -44,6 +44,7 @@
 Here is the folder structure of this app.
 
 <!--- FOLDER_STRUCTURE_START --->
+
 ```bash
 threejs-portfolio/
   |- public/
@@ -94,6 +95,7 @@ threejs-portfolio/
   |- tsconfig.node.tsbuildinfo
   |- vite.config.ts
 ```
+
 <!--- FOLDER_STRUCTURE_END --->
 
 <br />
@@ -140,9 +142,9 @@ VITE_APP_PUBLIC_KEY=xxxxxxxxxxxxxx
 - Enter the email address where you want to receive emails.
 - Ensure that the chosen email address is accessible and ready to receive emails.
 
-9. Open terminal in root directory. Run `npm install --legacy-peer-deps` or `yarn install --legacy-peer-deps` or `bun install --legacy-peer-deps` to install dependencies.
+9. Open terminal in root directory. Run `npm install --legacy-peer-deps` or `pnpm install --legacy-peer-deps` to install dependencies.
 
-10. Now app is fully configured 👍 and you can start using this app using either one of `npm run dev` or `yarn dev` or `bun dev`.
+10. Now app is fully configured 👍 and you can start using this app using either one of `npm run dev` or `pnpm dev`.
 
 **NOTE:** Please make sure to keep your API keys and configuration values secure and do not expose them publicly.
 
@@ -183,6 +185,7 @@ You might encounter some bugs while using this app. You are more than welcome to
 Useful resources and dependencies that are used in Threejs portfolio.
 
 <!--- DEPENDENCIES_START --->
+
 - [@emailjs/browser](https://www.npmjs.com/package/@emailjs/browser): ^4.4.1
 - [@eslint/js](https://www.npmjs.com/package/@eslint/js): ^10.0.1
 - [@gsap/react](https://www.npmjs.com/package/@gsap/react): ^2.1.2
