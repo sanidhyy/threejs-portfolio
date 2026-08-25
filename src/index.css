@@ -226,3 +226,8 @@
     transform: rotate(0deg);
   }
 }
+
+/* Hide reCAPTCHA v3 badge */
+.grecaptcha-badge {
+  visibility: hidden;
+}
