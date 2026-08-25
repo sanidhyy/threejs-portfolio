@@ -1,76 +1,96 @@
-import emailjs from "@emailjs/browser";
-import { useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
+import {
+  GoogleReCaptchaProvider,
+  useGoogleReCaptcha,
+} from "react-google-recaptcha-v3";
 import { toast } from "sonner";
 
-export const Contact = () => {
-  const formRef = useRef<HTMLFormElement>(null);
+import {
+  CONTACT_RECAPTCHA_ACTION,
+  isValidContactEmail,
+  isValidContactMessage,
+  isValidContactName,
+  type ContactFormFields,
+} from "../lib/contact";
 
-  const [isLoading, setIsLoading] = useState(false);
-  const [form, setForm] = useState({
+const FIELD_VALIDATORS: Record<
+  keyof ContactFormFields,
+  (value: string) => boolean
+> = {
+  name: isValidContactName,
+  email: isValidContactEmail,
+  message: isValidContactMessage,
+};
+
+const fieldInputClassName =
+  "field-input disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-75";
+
+const ContactForm = () => {
+  const { executeRecaptcha } = useGoogleReCaptcha();
+
+  const formRef = useRef<HTMLFormElement>(null);
+  const messageRef = useRef<HTMLTextAreaElement>(null);
+  const hasAttemptedSubmit = useRef(false);
+
+  const [form, setForm] = useState<ContactFormFields>({
     name: "",
     email: "",
     message: "",
   });
+  const [fieldErrors, setFieldErrors] = useState({
+    name: false,
+    email: false,
+    message: false,
+  });
+  const [isLoading, setIsLoading] = useState(false);
+
+  useLayoutEffect(() => {
+    const el = messageRef.current;
+    if (!el) return;
+
+    el.style.overflowY = "hidden";
+    el.style.height = "auto";
+
+    const nextHeight = el.scrollHeight;
+    const maxHeight = Number.parseFloat(getComputedStyle(el).maxHeight);
+
+    if (Number.isFinite(maxHeight) && nextHeight >= maxHeight) {
+      el.style.height = `${maxHeight}px`;
+      el.style.overflowY = "auto";
+      return;
+    }
+
+    el.style.height = `${nextHeight}px`;
+  }, [form.message]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const { name, value } = e.target;
+    const field = e.target.name as keyof ContactFormFields;
+    const value = e.target.value;
 
-    setForm({ ...form, [name]: value });
+    setForm((prev) => ({ ...prev, [field]: value }));
+
+    if (!hasAttemptedSubmit.current) return;
+
+    const isInvalid = !FIELD_VALIDATORS[field](value);
+    setFieldErrors((prev) =>
+      prev[field] === isInvalid ? prev : { ...prev, [field]: isInvalid }
+    );
   };
 
   const validateForm = () => {
-    // form fields
-    const { name, email, message } = form;
+    hasAttemptedSubmit.current = true;
 
-    interface Current {
-      name: boolean;
-      email: boolean;
-      message: boolean;
-    }
+    const nextErrors = {
+      name: !isValidContactName(form.name),
+      email: !isValidContactEmail(form.email),
+      message: !isValidContactMessage(form.message),
+    };
 
-    // Error message
-    const nameError = document.querySelector("#name-error")!;
-    const emailError = document.querySelector("#email-error")!;
-    const messageError = document.querySelector("#message-error")!;
-    const current: Current = { name: false, email: false, message: false };
+    setFieldErrors(nextErrors);
 
-    // validate name
-    if (name.trim().length < 3) {
-      nameError.classList.remove("hidden");
-      current.name = false;
-    } else {
-      nameError.classList.add("hidden");
-      current.name = true;
-    }
-
-    // prettier-ignore
-    const email_regex =
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-    // valiate email
-    if (!email_regex.exec(email.trim().toLowerCase())) {
-      emailError.classList.remove("hidden");
-      current.email = false;
-    } else {
-      emailError.classList.add("hidden");
-      current.email = true;
-    }
-
-    // validate message
-    if (message.trim().length < 5) {
-      messageError.classList.remove("hidden");
-      current.message = false;
-    } else {
-      messageError.classList.add("hidden");
-      current.message = true;
-    }
-
-    // True if all fields are validated
-    return Object.keys(current).every(
-      (k) => current[k as keyof typeof current]
-    );
+    return !nextErrors.name && !nextErrors.email && !nextErrors.message;
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -78,28 +98,47 @@ export const Contact = () => {
 
     if (!validateForm()) return;
 
+    if (!executeRecaptcha) {
+      toast.error("reCAPTCHA is not ready. Please try again.");
+      return;
+    }
+
     setIsLoading(true);
 
     try {
-      await emailjs.send(
-        import.meta.env.VITE_APP_SERVICE_ID,
-        import.meta.env.VITE_APP_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          to_name: "Shubham",
-          from_email: form.email,
-          to_email: import.meta.env.VITE_APP_EMAIL,
-          message: form.message,
+      const recaptchaToken = await executeRecaptcha(CONTACT_RECAPTCHA_ACTION);
+
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        {
-          publicKey: import.meta.env.VITE_APP_PUBLIC_KEY,
-        }
-      );
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          recaptchaToken,
+        }),
+      });
+
+      const data = (await response.json().catch(() => null)) as {
+        error?: string;
+      } | null;
+
+      if (!response.ok) {
+        toast.error(data?.error ?? "Something went wrong!");
+        return;
+      }
 
       setForm({
         name: "",
         email: "",
         message: "",
+      });
+      setFieldErrors({
+        name: false,
+        email: false,
+        message: false,
       });
 
       toast.success("Your message has been sent!");
@@ -113,7 +152,124 @@ export const Contact = () => {
   };
 
   return (
-    <section className="c-space my-20" id="contact">
+    <>
+      <p className="mt-3 text-lg text-white-600">
+        Whether you&apos;re looking to build a new website, improve your
+        existing platform, or bring a unique project to life, I&apos;m here to
+        help.
+      </p>
+
+      <form
+        ref={formRef}
+        onSubmit={(e) => void handleSubmit(e)}
+        className="mt-12 flex flex-col space-y-7"
+      >
+        <label className="space-y-3" htmlFor="name">
+          <span className="field-label">Full name</span>
+
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={form.name}
+            onChange={handleChange}
+            className={fieldInputClassName}
+            placeholder="John Doe"
+            autoCapitalize="on"
+            maxLength={200}
+            disabled={isLoading}
+            aria-invalid={fieldErrors.name}
+            aria-describedby="name-error"
+          />
+
+          <span
+            className={`text-red-400 ${fieldErrors.name ? "block" : "hidden"}`}
+            id="name-error"
+          >
+            Invalid Name!
+          </span>
+        </label>
+
+        <label className="space-y-3" htmlFor="email">
+          <span className="field-label">Email</span>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={form.email}
+            onChange={handleChange}
+            className={fieldInputClassName}
+            placeholder="john.doe@email.com"
+            autoCapitalize="off"
+            maxLength={100}
+            disabled={isLoading}
+            aria-invalid={fieldErrors.email}
+            aria-describedby="email-error"
+          />
+
+          <span
+            className={`text-red-400 ${fieldErrors.email ? "block" : "hidden"}`}
+            id="email-error"
+          >
+            Invalid Email!
+          </span>
+        </label>
+
+        <label className="space-y-3" htmlFor="message">
+          <span className="field-label">Your message</span>
+
+          <textarea
+            ref={messageRef}
+            id="message"
+            name="message"
+            value={form.message}
+            onChange={handleChange}
+            rows={5}
+            className={`${fieldInputClassName} max-h-60 resize-none overflow-hidden`}
+            placeholder="Hi, I'm interested in..."
+            autoCapitalize="on"
+            maxLength={500}
+            disabled={isLoading}
+            aria-invalid={fieldErrors.message}
+            aria-describedby="message-error"
+          />
+
+          <span
+            className={`text-red-400 ${
+              fieldErrors.message ? "block" : "hidden"
+            }`}
+            id="message-error"
+          >
+            Invalid Message!
+          </span>
+        </label>
+
+        <button
+          type="submit"
+          className="field-btn disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-75"
+          disabled={isLoading}
+        >
+          {isLoading ? "Sending..." : "Send Message"}
+
+          {!isLoading && (
+            <img
+              src="/assets/arrow-up.png"
+              alt="Arrow"
+              className="field-btn_arrow"
+            />
+          )}
+        </button>
+      </form>
+    </>
+  );
+};
+
+export const Contact = () => {
+  const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
+
+  return (
+    <section className="my-20 c-space" id="contact">
       <div className="relative flex min-h-screen flex-col items-center justify-center">
         <img
           src="/assets/terminal.png"
@@ -124,90 +280,15 @@ export const Contact = () => {
         <div className="contact-container">
           <h3 className="head-text">Let&apos;s talk</h3>
 
-          <p className="mt-3 text-lg text-white-600">
-            Whether you&apos;re looking to build a new website, improve your
-            existing platform, or bring a unique project to life, I&apos;m here
-            to help.
-          </p>
-
-          <form
-            ref={formRef}
-            onSubmit={(e) => void handleSubmit(e)}
-            className="mt-12 flex flex-col space-y-7"
-          >
-            <label className="space-y-3">
-              <span className="field-label">Full name</span>
-
-              <input
-                type="text"
-                name="name"
-                value={form.name}
-                onChange={handleChange}
-                className="field-input disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-75"
-                placeholder="John Doe"
-                autoCapitalize="on"
-                disabled={isLoading}
-              />
-
-              <span className="hidden text-red-400" id="name-error">
-                Invalid Name!
-              </span>
-            </label>
-
-            <label className="space-y-3">
-              <span className="field-label">Email</span>
-
-              <input
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={handleChange}
-                className="field-input disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-75"
-                placeholder="john.doe@email.com"
-                autoCapitalize="off"
-                disabled={isLoading}
-              />
-
-              <span className="hidden text-red-400" id="email-error">
-                Invalid Email!
-              </span>
-            </label>
-
-            <label className="space-y-3">
-              <span className="field-label">Your message</span>
-
-              <textarea
-                name="message"
-                value={form.message}
-                onChange={handleChange}
-                rows={5}
-                className="field-input disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-75"
-                placeholder="Hi, I'm interested in..."
-                autoCapitalize="on"
-                disabled={isLoading}
-              />
-
-              <span className="hidden text-red-400" id="message-error">
-                Invalid Message!
-              </span>
-            </label>
-
-            <button
-              type="submit"
-              className="field-btn disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-75"
-              disabled={isLoading}
-            >
-              {isLoading ? "Sending..." : "Send Message"}
-
-              {!isLoading && (
-                <img
-                  src="/assets/arrow-up.png"
-                  alt="Arrow"
-                  className="field-btn_arrow"
-                />
-              )}
-            </button>
-          </form>
+          {siteKey ? (
+            <GoogleReCaptchaProvider reCaptchaKey={siteKey}>
+              <ContactForm />
+            </GoogleReCaptchaProvider>
+          ) : (
+            <p className="mt-3 text-lg text-white-600">
+              Contact form is currently unavailable.
+            </p>
+          )}
         </div>
       </div>
     </section>
