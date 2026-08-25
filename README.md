@@ -190,6 +190,7 @@ Useful resources and dependencies that are used in Threejs portfolio.
 - [@react-three/fiber](https://www.npmjs.com/package/@react-three/fiber): 8
 - [@types/react](https://www.npmjs.com/package/@types/react): 18
 - [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): 18
+- [@types/three](https://www.npmjs.com/package/@types/three): ^0.185.4
 - [@vitejs/plugin-react](https://www.npmjs.com/package/@vitejs/plugin-react): ^6.0.1
 - [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.4.21
 - [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
@@ -212,6 +213,7 @@ Useful resources and dependencies that are used in Threejs portfolio.
 - [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^3.3.1
 - [tailwindcss](https://www.npmjs.com/package/tailwindcss): 3
 - [three](https://www.npmjs.com/package/three): 0.185.1
+- [three-stdlib](https://www.npmjs.com/package/three-stdlib): ^2.36.1
 - [typescript](https://www.npmjs.com/package/typescript): ^7.0.2
 - [typescript-eslint](https://www.npmjs.com/package/typescript-eslint): ^8.35.1
 - [vite](https://www.npmjs.com/package/vite): ^8.0.0
