@@ -211,7 +211,7 @@ Useful resources and dependencies that are used in Threejs portfolio.
 - [react-globe.gl](https://www.npmjs.com/package/react-globe.gl): ^2.34.0
 - [react-google-recaptcha-v3](https://www.npmjs.com/package/react-google-recaptcha-v3): ^1.11.0
 - [react-responsive](https://www.npmjs.com/package/react-responsive): ^10.0.1
-- [resend](https://www.npmjs.com/package/resend): ^6.22.0
+- [resend](https://www.npmjs.com/package/resend): ^6.24.0
 - [sonner](https://www.npmjs.com/package/sonner): ^2.0.6
 - [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^3.3.1
 - [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^4.3.3
