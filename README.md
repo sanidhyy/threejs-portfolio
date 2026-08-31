@@ -218,7 +218,7 @@ Useful resources and dependencies that are used in Threejs portfolio.
 - [three](https://www.npmjs.com/package/three): 0.185.1
 - [three-stdlib](https://www.npmjs.com/package/three-stdlib): ^2.36.1
 - [typescript](https://www.npmjs.com/package/typescript): ^6.0.3
-- [typescript-eslint](https://www.npmjs.com/package/typescript-eslint): ^8.67.0
+- [typescript-eslint](https://www.npmjs.com/package/typescript-eslint): ^8.68.0
 - [vite](https://www.npmjs.com/package/vite): ^8.0.0
 
 <!--- DEPENDENCIES_END --->
