@@ -78,7 +78,7 @@
     "react-globe.gl": "^2.34.0",
     "react-google-recaptcha-v3": "^1.11.0",
     "react-responsive": "^10.0.1",
-    "resend": "^6.22.0",
+    "resend": "^6.24.0",
     "sonner": "^2.0.6",
     "tailwind-merge": "^3.3.1",
     "three": "0.185.1",
