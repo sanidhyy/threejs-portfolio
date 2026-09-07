@@ -190,7 +190,7 @@ Useful resources and dependencies that are used in Threejs portfolio.
 - [@react-three/drei](https://www.npmjs.com/package/@react-three/drei): ^10.4.4
 - [@react-three/fiber](https://www.npmjs.com/package/@react-three/fiber): ^9.7.0
 - [@tailwindcss/vite](https://www.npmjs.com/package/@tailwindcss/vite): ^4.3.3
-- [@types/node](https://www.npmjs.com/package/@types/node): ^26.4.0
+- [@types/node](https://www.npmjs.com/package/@types/node): ^26.4.1
 - [@types/react](https://www.npmjs.com/package/@types/react): ^19.2.18
 - [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^19.2.5
 - [@types/three](https://www.npmjs.com/package/@types/three): ^0.185.4
