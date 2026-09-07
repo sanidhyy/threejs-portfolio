@@ -199,7 +199,7 @@ Useful resources and dependencies that are used in Threejs portfolio.
 - [eslint](https://www.npmjs.com/package/eslint): ^10.9.1
 - [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react): ^7.37.5
 - [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks): ^7.0.0
-- [eslint-plugin-react-refresh](https://www.npmjs.com/package/eslint-plugin-react-refresh): ^0.5.0
+- [eslint-plugin-react-refresh](https://www.npmjs.com/package/eslint-plugin-react-refresh): ^0.5.6
 - [globals](https://www.npmjs.com/package/globals): ^17.12.0
 - [gsap](https://www.npmjs.com/package/gsap): ^3.13.0
 - [leva](https://www.npmjs.com/package/leva): ^0.10.0
