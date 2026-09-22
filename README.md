@@ -190,7 +190,7 @@ Useful resources and dependencies that are used in Threejs portfolio.
 - [@react-three/drei](https://www.npmjs.com/package/@react-three/drei): ^10.4.4
 - [@react-three/fiber](https://www.npmjs.com/package/@react-three/fiber): ^9.7.0
 - [@tailwindcss/vite](https://www.npmjs.com/package/@tailwindcss/vite): ^4.3.3
-- [@types/node](https://www.npmjs.com/package/@types/node): ^26.5.1
+- [@types/node](https://www.npmjs.com/package/@types/node): ^26.6.1
 - [@types/react](https://www.npmjs.com/package/@types/react): ^19.2.18
 - [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^19.2.5
 - [@types/three](https://www.npmjs.com/package/@types/three): ^0.185.4
@@ -199,7 +199,7 @@ Useful resources and dependencies that are used in Threejs portfolio.
 - [eslint](https://www.npmjs.com/package/eslint): ^10.9.1
 - [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react): ^7.37.5
 - [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks): ^7.0.0
-- [eslint-plugin-react-refresh](https://www.npmjs.com/package/eslint-plugin-react-refresh): ^0.5.6
+- [eslint-plugin-react-refresh](https://www.npmjs.com/package/eslint-plugin-react-refresh): ^0.5.7
 - [globals](https://www.npmjs.com/package/globals): ^17.12.0
 - [gsap](https://www.npmjs.com/package/gsap): ^3.13.0
 - [leva](https://www.npmjs.com/package/leva): ^0.10.0
@@ -213,7 +213,7 @@ Useful resources and dependencies that are used in Threejs portfolio.
 - [react-responsive](https://www.npmjs.com/package/react-responsive): ^10.0.1
 - [resend](https://www.npmjs.com/package/resend): ^6.28.1
 - [sonner](https://www.npmjs.com/package/sonner): ^2.0.6
-- [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^3.3.1
+- [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^3.7.0
 - [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^4.3.3
 - [three](https://www.npmjs.com/package/three): 0.186.0
 - [three-stdlib](https://www.npmjs.com/package/three-stdlib): ^2.36.1
