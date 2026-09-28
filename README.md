@@ -204,7 +204,7 @@ Useful resources and dependencies that are used in Threejs portfolio.
 - [gsap](https://www.npmjs.com/package/gsap): ^3.13.0
 - [leva](https://www.npmjs.com/package/leva): ^0.10.0
 - [maath](https://www.npmjs.com/package/maath): ^0.10.8
-- [prettier](https://www.npmjs.com/package/prettier): ^3.6.2
+- [prettier](https://www.npmjs.com/package/prettier): ^3.9.9
 - [prettier-plugin-tailwindcss](https://www.npmjs.com/package/prettier-plugin-tailwindcss): ^0.8.1
 - [react](https://www.npmjs.com/package/react): ^19.2.8
 - [react-dom](https://www.npmjs.com/package/react-dom): ^19.2.8
