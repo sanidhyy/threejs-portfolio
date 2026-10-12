@@ -185,7 +185,7 @@ Useful resources and dependencies that are used in Threejs portfolio.
 <!--- DEPENDENCIES_START --->
 - [@eslint/js](https://www.npmjs.com/package/@eslint/js): ^10.0.1
 - [@gsap/react](https://www.npmjs.com/package/@gsap/react): ^2.1.2
-- [@netlify/functions](https://www.npmjs.com/package/@netlify/functions): ^6.0.0
+- [@netlify/functions](https://www.npmjs.com/package/@netlify/functions): ^6.0.2
 - [@netlify/vite-plugin](https://www.npmjs.com/package/@netlify/vite-plugin): ^3.0.1
 - [@react-three/drei](https://www.npmjs.com/package/@react-three/drei): ^10.4.4
 - [@react-three/fiber](https://www.npmjs.com/package/@react-three/fiber): ^9.7.0
