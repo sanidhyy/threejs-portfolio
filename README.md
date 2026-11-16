@@ -193,7 +193,7 @@ Useful resources and dependencies that are used in Threejs portfolio.
 - [@types/node](https://www.npmjs.com/package/@types/node): ^26.6.2
 - [@types/react](https://www.npmjs.com/package/@types/react): ^19.2.18
 - [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^19.2.5
-- [@types/three](https://www.npmjs.com/package/@types/three): ^0.186.0
+- [@types/three](https://www.npmjs.com/package/@types/three): ^0.187.0
 - [@vitejs/plugin-react](https://www.npmjs.com/package/@vitejs/plugin-react): ^6.1.2
 - [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
 - [eslint](https://www.npmjs.com/package/eslint): ^10.12.0
@@ -215,7 +215,7 @@ Useful resources and dependencies that are used in Threejs portfolio.
 - [sonner](https://www.npmjs.com/package/sonner): ^2.0.6
 - [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^3.7.0
 - [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^4.3.3
-- [three](https://www.npmjs.com/package/three): 0.186.1
+- [three](https://www.npmjs.com/package/three): 0.187.0
 - [three-stdlib](https://www.npmjs.com/package/three-stdlib): ^2.36.1
 - [typescript](https://www.npmjs.com/package/typescript): ^6.0.3
 - [typescript-eslint](https://www.npmjs.com/package/typescript-eslint): ^8.71.1
