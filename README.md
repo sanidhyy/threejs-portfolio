@@ -199,7 +199,7 @@ Useful resources and dependencies that are used in Threejs portfolio.
 - [eslint](https://www.npmjs.com/package/eslint): ^10.12.0
 - [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react): ^7.37.5
 - [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks): ^7.0.0
-- [eslint-plugin-react-refresh](https://www.npmjs.com/package/eslint-plugin-react-refresh): ^0.5.7
+- [eslint-plugin-react-refresh](https://www.npmjs.com/package/eslint-plugin-react-refresh): ^0.5.8
 - [globals](https://www.npmjs.com/package/globals): ^17.13.0
 - [gsap](https://www.npmjs.com/package/gsap): ^3.13.0
 - [leva](https://www.npmjs.com/package/leva): ^0.10.0
@@ -211,7 +211,7 @@ Useful resources and dependencies that are used in Threejs portfolio.
 - [react-globe.gl](https://www.npmjs.com/package/react-globe.gl): ^2.34.0
 - [react-google-recaptcha-v3](https://www.npmjs.com/package/react-google-recaptcha-v3): ^1.11.0
 - [react-responsive](https://www.npmjs.com/package/react-responsive): ^10.0.1
-- [resend](https://www.npmjs.com/package/resend): ^6.32.0
+- [resend](https://www.npmjs.com/package/resend): ^6.38.1
 - [sonner](https://www.npmjs.com/package/sonner): ^2.0.6
 - [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^3.7.0
 - [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^4.3.3
